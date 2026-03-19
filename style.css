@@ -30,6 +30,7 @@ body {
 }
 
 .name {
+    font-family: 'Cairo', sans-serif;
     position: absolute;
      z-index: 10;
     top: 75%; 
