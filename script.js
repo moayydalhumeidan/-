@@ -5,9 +5,9 @@ whatsappBtn.addEventListener("click", () => {
     const name = input.value.trim();
 
     const message = `عيدكم مبارك 🌙
-الاسم: ${name}
+    ${name}
 هذه بطاقة العيد الخاصة بكم:
-https://USERNAME.github.io/eid-card/
+https://moayydalhumeidan.github.io/eid-card/
 كل عام وأنتم بخير 🌟`;
 
     const url = `https://wa.me/?text=${encodeURIComponent(message)}`;
