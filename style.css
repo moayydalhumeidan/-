@@ -35,7 +35,7 @@ body {
     top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 22px !important;      /* الحجم الجديد */
+    font-size: 26px !important;      /* الحجم الجديد */
     font-weight: 400 !important;     /* عادي وليس عريض */
     color: #333;
     width: 90%;
