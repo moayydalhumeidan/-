@@ -28,15 +28,17 @@ body {
     width: 100%;
     border-radius: 12px;
 }
-
 .name {
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Cairo', sans-serif !important;
     position: absolute;
-     z-index: 10;
-    top: 75%; 
+    z-index: 10;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 12px;
-    font-weight: normal;
-    color: #333345;
+    font-size: 22px !important;      /* الحجم الجديد */
+    font-weight: 400 !important;     /* عادي وليس عريض */
+    color: #333;
+    width: 90%;
+    text-align: center;
+    word-break: break-word;
 }
