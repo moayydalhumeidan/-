@@ -9,16 +9,8 @@ const whatsappBtn = document.getElementById("whatsappBtn");
 const card = document.querySelector(".card");
 
 whatsappBtn.addEventListener("click", async () => {
-  // إخفاء العناصر الإضافية فقط (ليس الـ input)
-  const container = document.querySelector(".container");
-  const inputBox = document.querySelector(".input-box");
-  
-  // حفظ الـ display الأصلي
-  const originalInputDisplay = inputBox.style.display;
+  // إخفاء الزر فقط (ليس input-box)
   const originalButtonDisplay = whatsappBtn.style.display;
-  
-  // إخفاء العناصر
-  inputBox.style.display = "none";
   whatsappBtn.style.display = "none";
   
   // تحويل البطاقة فقط
@@ -28,8 +20,7 @@ whatsappBtn.addEventListener("click", async () => {
     allowTaint: true,
     useCORS: true
   }).then(canvas => {
-    // إعادة إظهار العناصر
-    inputBox.style.display = originalInputDisplay;
+    // إعادة إظهار الزر
     whatsappBtn.style.display = originalButtonDisplay;
     
     canvas.toBlob(blob => {
