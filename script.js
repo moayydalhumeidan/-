@@ -9,10 +9,30 @@ const whatsappBtn = document.getElementById("whatsappBtn");
 const card = document.querySelector(".card");
 
 whatsappBtn.addEventListener("click", async () => {
-  // تحويل البطاقة لصورة
-  html2canvas(card).then(canvas => {
+  // إخفاء العناصر الإضافية فقط (ليس الـ input)
+  const container = document.querySelector(".container");
+  const inputBox = document.querySelector(".input-box");
+  
+  // حفظ الـ display الأصلي
+  const originalInputDisplay = inputBox.style.display;
+  const originalButtonDisplay = whatsappBtn.style.display;
+  
+  // إخفاء العناصر
+  inputBox.style.display = "none";
+  whatsappBtn.style.display = "none";
+  
+  // تحويل البطاقة فقط
+  html2canvas(card, {
+    backgroundColor: null,
+    scale: 2,
+    allowTaint: true,
+    useCORS: true
+  }).then(canvas => {
+    // إعادة إظهار العناصر
+    inputBox.style.display = originalInputDisplay;
+    whatsappBtn.style.display = originalButtonDisplay;
+    
     canvas.toBlob(blob => {
-      // مشاركة أو تحميل الصورة بناءً على دعم المتصفح
       if (navigator.canShare && navigator.canShare({ files: [new File([blob], "card.png", {type: "image/png"})] })) {
         const file = new File([blob], "card.png", {type: "image/png"});
         navigator.share({
@@ -21,7 +41,6 @@ whatsappBtn.addEventListener("click", async () => {
           text: 'أرسل لك بطاقة تهنئة!'
         });
       } else {
-        // في حال لم يتوفر Web Share API، حمل الصورة
         const link = document.createElement('a');
         link.download = "card.png";
         link.href = canvas.toDataURL();
