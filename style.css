@@ -1,72 +1,36 @@
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
+  height: auto; /* لا تجبر الصفحة على 100% */
 }
 
 body {
-    font-family: 'Cairo', sans-serif;
-    background: #f5f5f5;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: 'Cairo', sans-serif;
+  background: #f5f5f5;
+  text-align: center;
+
+  /* احذف flex لأنه يسبب اختفاء/خروج input في الجوال */
+  display: block;
+
+  padding: 16px;
 }
 
 .container {
-    max-width: 400px;
-    padding: 16px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
 .input-box {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .input-box input {
-    width: 100%;
-    padding: 12px;
-    font-size: 22px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    text-align: center;
-}
-
-#whatsappBtn {
-    margin: 16px 0;
-    padding: 12px 24px;
-    font-size: 16px;
-    background: #25D366;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.card {
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-.card-img {
-    width: 100%;
-    border-radius: 16px;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-.name {
-    font-family: 'Cairo', sans-serif !important;
-    position: absolute;
-    z-index: 10;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 22px !important;
-    font-weight: 400 !important;
-    color: #333;
-    width: 90%;
-    text-align: center;
-    word-break: break-word;
+  width: 100%;
+  box-sizing: border-box; /* مهم حتى لا يتجاوز العرض */
+  padding: 12px;
+  font-size: 22px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
 }
