@@ -24,11 +24,13 @@ body {
 .card {
     position: relative;
     margin-top: 20px;
-}
 
 .card-img {
     width: 100%;
     border-radius: 16px;
+    max-height: 600px;
+    object-fit: cover;
+    object-position: top;
 }
 .name {
     font-family: 'Cairo', sans-serif !important;
